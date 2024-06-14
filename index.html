@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background-color: #3140af;
+            color: white;
+            width: 100%;
+            max-width: 2000px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-areas: 
+                "logo nav";
+            grid-template-columns: 1fr 3fr;
+            padding: 0;
+        }
+
+        .footer-logo {
+            grid-area: logo;
+            background-color: #02026f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .footer-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .footer-nav {
+            grid-area: nav;
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .footer-section h3 {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+            line-height: 30px;
+        }
+
+        .footer-bottom {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            order: 1; 
+        }
+
+        .footer-bottom a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-section h3 .fas {
+            display: none;
+        }
+
+        /* Tablet view */
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-areas: 
+                    "nav"
+                    "logo";
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+            
+            .footer-nav {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 20px 0;
+            }
+            
+            .footer-logo {
+                justify-content: center;
+                padding: 50px 0;
+            }
+
+            .footer-section {
+                width: 50%;
+                box-sizing: border-box;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                margin-bottom: 20px;
+                padding-left: 75px;
+            }
+        }
+
+        /* Mobile view */
+        @media (max-width: 680px) {
+            .footer-container {
+                grid-template-areas: 
+                    "nav"
+                    "logo";
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            .footer-nav {
+                display: block;
+                padding: 0;
+            }
+
+            .footer-logo {
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .footer-section {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: start;
+            }
+
+            .footer-section h3 {
+                cursor: pointer;
+                background-color: #3140af;
+                padding: 10px;
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+            .footer-section ul {
+                display: none;
+                padding: 10px;
+                background-color: #3140af;
+            }
+
+            .footer-section.active ul {
+                display: block;
+            }
+
+            .footer-section h3 .fas {
+                display: inline-block;
+            }
+
+            .footer-bottom {
+                order: -1; 
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .footer-links {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-bottom">
+            <div class="footer-language">
+                <span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpm5udqAodrhwe1ciiEOEYtL7R7b2DVjb1s5qV2-p8Uyb0UfMl" alt="logo" style="width: 15px;"></span>
+                <span>India | English (IN) | ₹ (INR)</span>
+            </div>
+            <div class="footer-links">
+                <a href="#" style="text-decoration: none;">© 2024 Etsy, Inc.</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Interest-based ads</a>
+                <a href="#">Local Shops</a>
+                <a href="#">Regions</a>
+            </div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.0kgBSwnl_EBXilWimmpziwHaDf&pid=Api&P=0&h=220" alt="Logo">
+            </div>
+            <div class="footer-nav">
+                <div class="footer-section">
+                    <h3>Shop <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>Gift cards</li>
+                        <li>Etsy Registry</li>
+                        <li>Sitemap</li>
+                        <li>Etsy blog</li>
+                        <li>Etsy United Kingdom</li>
+                        <li>Etsy Germany</li>
+                        <li>Etsy Canada</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sell <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>Sell on Etsy</li>
+                        <li>Teams</li>
+                        <li>Forums</li>
+                        <li>Affiliates & Creators</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>Etsy, Inc.</li>
+                        <li>Policies</li>
+                        <li>Investors</li>
+                        <li>Careers</li>
+                        <li>Press</li>
+                        <li>Impact</li>
+                        <li>Legal imprint</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Help <i class="fas fa-chevron-down"></i></h3>
+                    <ul>
+                        <li>Help Centre</li>
+                        <li>Privacy settings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
